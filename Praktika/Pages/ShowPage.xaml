@@ -1,0 +1,26 @@
+﻿<Page x:Class="Praktika.Pages.ShowPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Praktika.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShowPage">
+
+    <Grid Background="White">
+
+        <ListBox Height="300" Width="300" HorizontalAlignment="Center"  VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" ItemsSource="{Binding Users}" />
+        
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,20,0,0"
+                 Command="{Binding BackCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource
+                    FindAncestor, AncestorType={x:Type Page}}}" 
+  Style="{StaticResource MaterialDesignRaisedDarkButton}"
+  Width="90"
+  ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+  Content="Back"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+    </Grid>
+</Page>
